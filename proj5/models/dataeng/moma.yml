@@ -1,0 +1,115 @@
+version: 2
+
+sources:
+    - name: moma
+      database: moma
+      schema: public
+      tables:
+          - name: artists
+          - name: artworks
+
+models:
+
+    - name: artist_wnb
+      description: "Artist who identify as female or non-binary"
+      columns:
+          - name: constituent_id
+            description: "Unique artist id"
+          - name: display_name
+            description: "Artist Name"
+          - name: nationality
+            description: "Artist Nationality"
+          - name: gender
+            description: "Artist Gender"
+
+    - name: artist_wnb_nat_count
+      description: "Count of Artist who identify as female or non-binary by nationlity"
+      columns:
+          - name: nationality
+            description: "Artist Nationality"
+          - name: count_women_nb
+            description: "Artist Count"
+
+    - name: artist_nat_count
+      description: "Count of Artist by nationlity"
+      columns:
+          - name: nationality
+            description: "Artist Nationality"
+          - name: count_total
+            description: "Artist Count"
+
+    - name: artist_nat_joined
+      description: "Join of count total artists and women and non-binary artists on nationality"
+      columns:
+          - name: nationality
+            description: "Artist Nationality"
+          - name: count_women_nb
+            description: "Women and Non-Binary Artist Count"
+          - name: count_total
+            description: "Total Artist Count"
+
+    - name: artist_nat_percentage
+      description: "Percentage women and non-binary artists per Nationality"
+      columns:
+          - name: nationality
+            description: "Artist Nationality"
+          - name: percentage
+            description: "Percentage of Women and Non-Binary Artists"
+
+    - name: artist_join_artwork
+      description: "Join of Artwork and Artist"
+      columns:
+          - name: artist_name
+            description: "Artist Name"
+          - name: nationality
+            description: "Artist Nationality"
+          - name: gender
+            description: "Artist Gender"
+          - name: title
+            description: "Title of Artwork"
+
+    - name: artwork_nat
+      description: "Count of Artworks per Nationality"
+      columns:
+          - name: nationality
+            description: "Artist Nationality"
+          - name: count_artworks
+            description: "Count of Artworks"
+
+    - name: artwork_wnb
+      description: "Join of Artwork and Artist, only Women and Non-Binary Artists"
+      columns:
+          - name: artist_name
+            description: "Artist Name"
+          - name: nationality
+            description: "Artist Nationality"
+          - name: gender
+            description: "Artist Gender"
+          - name: title
+            description: "Title of Artwork"
+
+    - name: artwork_wnb_nat
+      description: "Count of Artworks per Nationality for Women and Non-Binary Artists"
+      columns:
+          - name: nationality
+            description: "Artist Nationality"
+          - name: count_artworks_wnb
+            description: "Count of Artworks"
+
+    - name: artwork_nat_joined
+      description: "Join of Artwork total count and Women and Non-Binary count"
+      columns:
+          - name: nationality
+            description: "Artist Nationality"
+          - name: count_artworks_wnb
+            description: "Count of Artworks"
+          - name: count_artworks
+            description: "Count of Artworks"
+
+    - name: artwork_nat_percentage
+      description: "Percentage women and non-binary artworks per Nationality"
+      columns:
+          - name: nationality
+            description: "Artist Nationality"
+          - name: percentage
+            description: "Percentage of Women and Non-Binary Artworks"

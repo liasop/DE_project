@@ -33,6 +33,9 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 models:
   proj5:
-      # # Applies to all files under models/example/
-      # example:
-      #     materialized: view
+    # +database: moma
+    #   # Applies to all files under models/example/
+      example:
+          materialized: view
+      dataeng:
+          materialized: view
