@@ -14,6 +14,9 @@ models:
       description: "Artist who identify as female or non-binary"
       columns:
           - name: constituent_id
+            tests:
+              - unique
+              - not_null
             description: "Unique artist id"
           - name: display_name
             description: "Artist Name"
@@ -26,26 +29,41 @@ models:
       description: "Count of Artist who identify as female or non-binary by nationlity"
       columns:
           - name: nationality
+            tests:
+              - unique
             description: "Artist Nationality"
           - name: count_women_nb
+            tests:
+              - not_null
             description: "Artist Count"
+
 
     - name: artist_nat_count
       description: "Count of Artist by nationlity"
       columns:
           - name: nationality
+            tests:
+              - unique
             description: "Artist Nationality"
           - name: count_total
+            tests:
+              - not_null
             description: "Artist Count"
 
     - name: artist_nat_joined
       description: "Join of count total artists and women and non-binary artists on nationality"
       columns:
           - name: nationality
+            tests:
+              - unique
             description: "Artist Nationality"
           - name: count_women_nb
+            tests:
+              - not_null
             description: "Women and Non-Binary Artist Count"
           - name: count_total
+            tests:
+              - not_null
             description: "Total Artist Count"
 
     - name: artist_nat_percentage
@@ -53,7 +71,11 @@ models:
       columns:
           - name: nationality
             description: "Artist Nationality"
+            tests:
+              - unique
           - name: percentage
+            tests:
+              - not_null
             description: "Percentage of Women and Non-Binary Artists"
 
     - name: artist_join_artwork
@@ -72,8 +94,12 @@ models:
       description: "Count of Artworks per Nationality"
       columns:
           - name: nationality
+            tests:
+              - unique
             description: "Artist Nationality"
           - name: count_artworks
+            tests:
+              - not_null
             description: "Count of Artworks"
 
     - name: artwork_wnb
@@ -93,7 +119,11 @@ models:
       columns:
           - name: nationality
             description: "Artist Nationality"
+            tests:
+              - unique
           - name: count_artworks_wnb
+            tests:
+              - not_null
             description: "Count of Artworks"
 
     - name: artwork_nat_joined
@@ -101,15 +131,25 @@ models:
       columns:
           - name: nationality
             description: "Artist Nationality"
+            tests:
+              - unique
           - name: count_artworks_wnb
             description: "Count of Artworks"
+            tests:
+              - not_null
           - name: count_artworks
             description: "Count of Artworks"
+            tests:
+              - not_null
 
     - name: artwork_nat_percentage
       description: "Percentage women and non-binary artworks per Nationality"
       columns:
           - name: nationality
             description: "Artist Nationality"
+            tests:
+              - unique
           - name: percentage
             description: "Percentage of Women and Non-Binary Artworks"
+            tests:
+              - not_null

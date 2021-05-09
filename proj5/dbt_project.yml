@@ -35,7 +35,5 @@ models:
   proj5:
     # +database: moma
     #   # Applies to all files under models/example/
-      example:
-          materialized: view
       dataeng:
           materialized: view
