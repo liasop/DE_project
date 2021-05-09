@@ -1,6 +1,6 @@
 
 /*
-    This model is the join of the total count of artwork and wnb count of artowkr
+    This model is the join of the total count of artwork and wnb count
     by nationalty, joined on nationalty
 */
 

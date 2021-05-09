@@ -5,6 +5,6 @@
 */
 
 
-SELECT nationality, (count_women_nb / count_total) as percentage
+SELECT nationality, (CAST(count_women_nb as float) / CAST(count_total as float)) as percentage
 FROM {{ ref('artist_nat_joined') }}
 ORDER BY percentage DESC

@@ -6,4 +6,4 @@
 
 SELECT nationality, count(gender) as count_women_nb
 FROM {{ ref('artist_wnb') }}
-GROUP BY nationality
+GROUP BY nationality ORDER BY count_women_nb DESC

@@ -5,6 +5,6 @@
 */
 
 
-SELECT nationality, (count_artworks_wnb / count_artworks) as percentage
+SELECT nationality, (CAST(count_artworks_wnb as float) / CAST(count_artworks as float)) as percentage
 FROM {{ ref('artwork_nat_joined') }}
 ORDER BY percentage DESC

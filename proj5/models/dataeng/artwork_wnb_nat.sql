@@ -6,4 +6,4 @@
 
 SELECT nationality, count(*) as count_artworks_wnb
 FROM {{ ref('artwork_wnb') }}
-GROUP BY nationality
+GROUP BY nationality ORDER BY count_artworks_wnb DESC
