@@ -1,6 +1,6 @@
 
 /*
-    This model gets all artwork made by women and Non-Binary artists
+    This model is a view of all artwork made by women and Non-Binary artists
 */
 
 

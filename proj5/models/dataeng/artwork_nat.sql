@@ -1,6 +1,6 @@
 
 /*
-    This model count of artworks per nationality
+    This model counts the total number of artworks per nationality
 */
 
 

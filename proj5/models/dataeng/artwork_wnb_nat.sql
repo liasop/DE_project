@@ -1,6 +1,7 @@
 
 /*
-    This model count of artworks per nationality for Women and Non-Binary Artists
+    This model counts the number of artworks per nationality
+    for Women and Non-Binary Artists
 */
 
 
